@@ -1,0 +1,241 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #0D1B2A;
+  --color-navy-light: #1B2D45;
+  --color-navy-dark: #080F18;
+  --color-gold: #C9A84C;
+  --color-gold-dark: #B8860B;
+  --color-gold-light: #D4BC6A;
+  --color-ivory: #F5F0E8;
+  --color-ivory-dark: #E8E0D0;
+  --color-charcoal: #2E2E2E;
+  --color-sage: #5A7A6A;
+
+  --font-display: "Cormorant Garamond", "Georgia", serif;
+  --font-body: "Lora", "Georgia", serif;
+  --font-ui: "Raleway", "Helvetica Neue", sans-serif;
+}
+
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-charcoal);
+  background-color: var(--color-ivory);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Noise texture overlay */
+.texture-overlay {
+  position: relative;
+}
+
+.texture-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.texture-overlay > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Gold horizontal rule */
+.gold-rule {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-gold) 20%,
+    var(--color-gold) 80%,
+    transparent
+  );
+  border: none;
+}
+
+/* ─── Hero section with visible radial light ─── */
+.hero-gradient {
+  background:
+    radial-gradient(ellipse 60% 50% at 70% 40%, rgba(201, 168, 76, 0.22) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 60% at 10% 80%, rgba(27, 45, 69, 0.8) 0%, transparent 70%),
+    linear-gradient(170deg, #0D1B2A 0%, #162d4a 40%, #0D1B2A 100%);
+}
+
+/* ─── Gold text glow ─── */
+.gold-glow {
+  text-shadow: 0 0 20px rgba(201, 168, 76, 0.5), 0 0 40px rgba(201, 168, 76, 0.2);
+}
+
+/* ─── Stats bar with visible gradient ─── */
+.stats-gradient {
+  background: linear-gradient(135deg, #1B2D45 0%, #0f1e32 50%, #1B2D45 100%);
+  border-top: 3px solid rgba(201, 168, 76, 0.5);
+  border-bottom: 3px solid rgba(201, 168, 76, 0.5);
+}
+
+/* ─── Card hover shine ─── */
+.card-shine {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-shine:hover {
+  border-color: rgba(201, 168, 76, 0.5);
+  box-shadow: 0 4px 20px rgba(201, 168, 76, 0.15);
+}
+
+.card-shine::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(201, 168, 76, 0.15), transparent);
+  transition: left 0.6s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.card-shine:hover::before {
+  left: 100%;
+}
+
+/* ─── Visible grid pattern ─── */
+.grid-pattern {
+  background-image:
+    linear-gradient(rgba(201, 168, 76, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201, 168, 76, 0.08) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* ─── Floating animation ─── */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+.float-animation {
+  animation: float 5s ease-in-out infinite;
+}
+
+/* ─── Marquee ─── */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ─── Visible ivory section with diagonal gold stripe ─── */
+.ivory-accent {
+  background:
+    linear-gradient(135deg, transparent 45%, rgba(201, 168, 76, 0.06) 50%, transparent 55%),
+    #F5F0E8;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-navy-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-gold);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold-light);
+}
+
+/* ─── Pulse glow animation ─── */
+@keyframes pulseGlow {
+  0%, 100% { filter: drop-shadow(0 0 8px rgba(201, 168, 76, 0.3)); }
+  50% { filter: drop-shadow(0 0 20px rgba(201, 168, 76, 0.5)); }
+}
+
+.pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+/* ─── Rotating slow spin (for decorative elements) ─── */
+@keyframes slowSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.slow-spin {
+  animation: slowSpin 30s linear infinite;
+}
+
+/* ─── Gold gradient orb ─── */
+.gold-orb {
+  background: radial-gradient(circle, rgba(201, 168, 76, 0.35) 0%, rgba(201, 168, 76, 0.12) 40%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.gold-orb-strong {
+  background: radial-gradient(circle, rgba(201, 168, 76, 0.5) 0%, rgba(201, 168, 76, 0.2) 40%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* ─── Diagonal gold stripe pattern ─── */
+.diagonal-stripes {
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 30px,
+    rgba(201, 168, 76, 0.08) 30px,
+    rgba(201, 168, 76, 0.08) 32px
+  );
+}
+
+/* ─── Gold border card ─── */
+.gold-border-card {
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  background: linear-gradient(135deg, rgba(201, 168, 76, 0.06) 0%, transparent 50%);
+}
+
+.gold-border-card:hover {
+  border-color: rgba(201, 168, 76, 0.5);
+  box-shadow: 0 8px 30px rgba(201, 168, 76, 0.15);
+}
+
+/* ─── Section wave divider ─── */
+.section-divider-gold {
+  height: 4px;
+  background: linear-gradient(90deg, transparent 0%, var(--color-gold) 15%, var(--color-gold) 85%, transparent 100%);
+  opacity: 0.5;
+}
+
+/* ─── Decorative ring ─── */
+.decorative-ring {
+  border: 2px solid rgba(201, 168, 76, 0.25);
+  border-radius: 50%;
+  position: absolute;
+  pointer-events: none;
+}
+
+/* Selection color */
+::selection {
+  background-color: var(--color-gold);
+  color: var(--color-navy);
+}
