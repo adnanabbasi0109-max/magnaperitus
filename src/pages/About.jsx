@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { MapPin, User } from "lucide-react";
+import { MapPin } from "lucide-react";
 import SectionHeading from "../components/SectionHeading";
 import PageMeta from "../components/PageMeta";
 import { LegalDivider } from "../components/LawVisuals";
@@ -129,35 +129,32 @@ export default function About() {
         <div className="mx-auto max-w-6xl px-6">
           <SectionHeading title="The Firm" />
 
-          <div className="mt-12 grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-12 items-start">
-            <FadeIn className="space-y-6">
-              <p className="font-body text-lg leading-relaxed text-charcoal">
-                Magnaperitus is a full-service law firm headquartered in Bhopal,
-                Madhya Pradesh, with an active presence across Central India
-                &mdash; spanning the states of Madhya Pradesh, Chhattisgarh,
-                Rajasthan, Uttar Pradesh, and Delhi. The name Magnaperitus &mdash;
-                Latin for &ldquo;Great Expert&rdquo; &mdash; reflects the
-                firm&rsquo;s founding philosophy: that legal excellence is not
-                merely a function of knowledge, but of the mastery that comes from
-                years of disciplined practice, strategic thinking, and unwavering
-                commitment to the client&rsquo;s cause.
-              </p>
+          <FadeIn className="mt-12 space-y-6">
+            <p className="font-body text-lg leading-relaxed text-charcoal">
+              Magnaperitus is a full-service law firm headquartered in Bhopal,
+              Madhya Pradesh, with an active presence across Central India
+              &mdash; spanning the states of Madhya Pradesh, Chhattisgarh,
+              Rajasthan, Uttar Pradesh, and Delhi. The name Magnaperitus &mdash;
+              Latin for &ldquo;Great Expert&rdquo; &mdash; reflects the
+              firm&rsquo;s founding philosophy: that legal excellence is not
+              merely a function of knowledge, but of the mastery that comes from
+              years of disciplined practice, strategic thinking, and unwavering
+              commitment to the client&rsquo;s cause.
+            </p>
 
-              <p className="font-body text-lg leading-relaxed text-charcoal">
-                The firm has built its reputation through consistent
-                representation before the nation&rsquo;s most demanding judicial
-                and quasi-judicial forums, including various High Courts, the
-                National Green Tribunal, Arbitration Tribunals, Electricity
-                Regulatory Commissions, Consumer Courts, the Commercial Tax
-                Appellate Board, the Income Tax Appellate Authority, the National
-                Company Law Tribunal, District Courts, and Family Courts. This
-                breadth of practice gives Magnaperitus a rare, integrated
-                understanding of the law &mdash; enabling the firm to offer advice
-                that is not merely technically sound, but strategically informed.
-              </p>
-            </FadeIn>
-
-          </div>
+            <p className="font-body text-lg leading-relaxed text-charcoal">
+              The firm has built its reputation through consistent
+              representation before the nation&rsquo;s most demanding judicial
+              and quasi-judicial forums, including various High Courts, the
+              National Green Tribunal, Arbitration Tribunals, Electricity
+              Regulatory Commissions, Consumer Courts, the Commercial Tax
+              Appellate Board, the Income Tax Appellate Authority, the National
+              Company Law Tribunal, District Courts, and Family Courts. This
+              breadth of practice gives Magnaperitus a rare, integrated
+              understanding of the law &mdash; enabling the firm to offer advice
+              that is not merely technically sound, but strategically informed.
+            </p>
+          </FadeIn>
         </div>
       </section>
 
