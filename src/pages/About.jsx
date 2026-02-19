@@ -157,17 +157,6 @@ export default function About() {
               </p>
             </FadeIn>
 
-            {/* Law image sidebar */}
-            <FadeIn delay={0.2} className="hidden lg:block">
-              <div className="relative">
-                <img
-                  src="/images/gavel-justice.jpg"
-                  alt="Scales of justice"
-                  className="w-full h-[350px] object-cover rounded-lg shadow-lg"
-                />
-                <div className="absolute -bottom-3 -left-3 w-full h-full border-2 border-gold/30 rounded-lg pointer-events-none" />
-              </div>
-            </FadeIn>
           </div>
         </div>
       </section>
@@ -255,27 +244,9 @@ export default function About() {
             <div className="mx-auto my-8 h-[2px] w-20 bg-gold" />
           </FadeIn>
 
-          {/* ── Two-column: Photo + Bio ── */}
-          <div className="mt-4 grid grid-cols-1 gap-12 lg:grid-cols-5">
-            {/* Photo placeholder */}
-            <FadeIn delay={0.1} className="lg:col-span-2">
-              <div className="relative flex aspect-[3/4] items-center justify-center rounded-lg border border-gold/20 bg-navy-light overflow-hidden">
-                {/* Background pattern */}
-                <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(201,168,76,1) 10px, rgba(201,168,76,1) 11px)' }} />
-                {/* Radial glow */}
-                <div className="absolute inset-0 bg-gradient-to-b from-gold/[0.06] via-transparent to-gold/[0.03]" />
-                <div className="flex flex-col items-center gap-3 relative z-10">
-                  <div className="w-24 h-24 rounded-full border-2 border-gold/30 flex items-center justify-center bg-navy">
-                    <User className="text-gold" size={48} />
-                  </div>
-                  <span className="font-display text-gold/60 text-lg italic">Shantanoo Saxena</span>
-                  <span className="font-ui text-gold/30 text-xs uppercase tracking-wider">Founder & Lead Counsel</span>
-                </div>
-              </div>
-            </FadeIn>
-
-            {/* Bio */}
-            <FadeIn delay={0.25} className="lg:col-span-3">
+          {/* ── Bio ── */}
+          <div className="mt-4">
+            <FadeIn delay={0.15}>
               <div className="font-body space-y-6 text-lg leading-relaxed text-ivory/80">
                 <p>
                   Shantanoo Saxena is a lawyer of rare distinction &mdash; a

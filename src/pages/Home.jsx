@@ -308,21 +308,11 @@ function PracticeAreasGrid() {
   return (
     <section className="bg-ivory-dark py-20 relative overflow-hidden">
       <div className="max-w-6xl mx-auto px-6 relative z-10">
-        {/* Header with gavel image */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 items-center mb-14">
-          <div>
-            <SectionHeading
-              title="Our Practice Areas"
-              subtitle="Comprehensive legal services across the full spectrum of law"
-            />
-          </div>
-          <div className="hidden lg:block">
-            <img
-              src="/images/gavel-justice.jpg"
-              alt="Scales of Justice"
-              className="w-64 h-44 object-cover rounded-lg shadow-lg border border-gold/20"
-            />
-          </div>
+        <div className="mb-14">
+          <SectionHeading
+            title="Our Practice Areas"
+            subtitle="Comprehensive legal services across the full spectrum of law"
+          />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -443,25 +433,9 @@ function LeadershipSpotlight() {
           ref={ref}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
-          className="grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-12 items-center"
+          className="max-w-3xl mx-auto"
         >
-          {/* Left — office / law books image */}
-          <motion.div
-            variants={fadeUp}
-            custom={0}
-            className="hidden lg:flex flex-col items-center"
-          >
-            <div className="relative">
-              <img
-                src="/images/law-books.jpg"
-                alt="Law books"
-                className="w-56 h-72 object-cover rounded-lg shadow-xl border-2 border-gold/30"
-              />
-              <div className="absolute -bottom-2 -left-2 w-full h-full border-2 border-gold/20 rounded-lg pointer-events-none" />
-            </div>
-          </motion.div>
-
-          {/* Right — text content */}
+          {/* Text content */}
           <div className="border-l-2 border-gold pl-8">
             <motion.p
               variants={fadeUp}
